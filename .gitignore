@@ -1,0 +1,23 @@
+# NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Compiled Java files
+*.class
+
+# IDE files
+.idea/
+*.iml
+
+# Temporary files
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+Option 2 — Git
