@@ -20,8 +20,12 @@ public class CashierPOS extends javax.swing.JFrame {
      */
     public CashierPOS() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(0, 102, 102));
+        
         setupCartTable();
         loadMedicines();
+        
+        
     }
     
     public CashierPOS(int userId, String fullName){
@@ -32,6 +36,7 @@ public class CashierPOS extends javax.swing.JFrame {
         
         setupCartTable();
         loadMedicines();
+        getContentPane().setBackground(new java.awt.Color(0, 102, 102));
     }
     
     private void setupCartTable() {
@@ -113,27 +118,29 @@ public class CashierPOS extends javax.swing.JFrame {
         lblQuantity = new javax.swing.JLabel();
         cmbMedicine = new javax.swing.JComboBox<>();
         txtQuantity = new javax.swing.JTextField();
-        tblCart = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCartTwo = new javax.swing.JTable();
         lblTotal = new javax.swing.JLabel();
-        btnRemoveItem = new javax.swing.JButton();
-        btnClearCart = new javax.swing.JButton();
-        btnCheckout = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        btnClearCart = new javax.swing.JButton();
+        btnRemoveItem = new javax.swing.JButton();
+        btnCheckout = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblTitle.setText("HEALTHFIRST PHARMACY CASHIER POS");
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setText("CASHIER POS");
 
+        lblMedicine.setForeground(new java.awt.Color(255, 255, 255));
         lblMedicine.setText("Medicine:");
 
+        lblQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblQuantity.setText("Quantity");
 
         cmbMedicine.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        tblCart.setText("Add to Cart");
-        tblCart.addActionListener(this::tblCartActionPerformed);
 
         tblCartTwo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -148,91 +155,163 @@ public class CashierPOS extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblCartTwo);
 
+        lblTotal.setForeground(new java.awt.Color(255, 255, 255));
         lblTotal.setText("Total: R0.00");
 
-        btnRemoveItem.setText("REMOVE ITEM");
-        btnRemoveItem.addActionListener(this::btnRemoveItemActionPerformed);
-
-        btnClearCart.setText("CLEAR CART");
-        btnClearCart.addActionListener(this::btnClearCartActionPerformed);
-
-        btnCheckout.setText("CHECKOUT");
-        btnCheckout.addActionListener(this::btnCheckoutActionPerformed);
-
+        btnLogout.setBackground(new java.awt.Color(255, 0, 51));
+        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("LOGOUT");
         btnLogout.addActionListener(this::btnLogoutActionPerformed);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnClearCart.setText("CLEAR CART");
+        btnClearCart.setBorderPainted(false);
+        btnClearCart.setContentAreaFilled(false);
+        btnClearCart.setFocusPainted(false);
+        btnClearCart.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClearCartMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClearCartMouseExited(evt);
+            }
+        });
+        btnClearCart.addActionListener(this::btnClearCartActionPerformed);
+
+        btnRemoveItem.setText("REMOVE ITEM");
+        btnRemoveItem.setBorderPainted(false);
+        btnRemoveItem.setContentAreaFilled(false);
+        btnRemoveItem.setFocusPainted(false);
+        btnRemoveItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRemoveItemMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRemoveItemMouseExited(evt);
+            }
+        });
+        btnRemoveItem.addActionListener(this::btnRemoveItemActionPerformed);
+
+        btnCheckout.setText("CHECKOUT");
+        btnCheckout.setBorderPainted(false);
+        btnCheckout.setContentAreaFilled(false);
+        btnCheckout.setFocusPainted(false);
+        btnCheckout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCheckoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCheckoutMouseExited(evt);
+            }
+        });
+        btnCheckout.addActionListener(this::btnCheckoutActionPerformed);
+
+        btnAdd.setText("ADD TO CART");
+        btnAdd.setBorderPainted(false);
+        btnAdd.setContentAreaFilled(false);
+        btnAdd.setFocusPainted(false);
+        btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddMouseExited(evt);
+            }
+        });
+        btnAdd.addActionListener(this::btnAddActionPerformed);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnClearCart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCheckout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnRemoveItem)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnRemoveItem, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnClearCart, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblTotal)
-                .addGap(224, 224, 224))
             .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(57, 57, 57)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblTotal)
+                                .addGap(21, 21, 21))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(158, 158, 158))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblMedicine)
                                     .addComponent(lblQuantity))
                                 .addGap(58, 58, 58)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cmbMedicine, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(tblCart))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(btnRemoveItem)
-                        .addGap(30, 30, 30)
-                        .addComponent(btnClearCart)
-                        .addGap(33, 33, 33)
-                        .addComponent(btnCheckout)
-                        .addGap(35, 35, 35)
-                        .addComponent(btnLogout)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(36, 36, 36)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblMedicine)
-                    .addComponent(cmbMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblQuantity)
-                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tblCart)
+                    .addComponent(cmbMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedicine))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblQuantity))
+                .addGap(63, 63, 63)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTotal)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRemoveItem)
-                    .addComponent(btnClearCart)
-                    .addComponent(btnCheckout)
-                    .addComponent(btnLogout))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblCartActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         String selectedMedicine = (String) cmbMedicine.getSelectedItem();
         String quantityText = txtQuantity.getText().trim();
 
@@ -329,7 +408,7 @@ try {
             "Database Error",
             JOptionPane.ERROR_MESSAGE);
 }
-    }//GEN-LAST:event_tblCartActionPerformed
+    }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveItemActionPerformed
         int row = tblCartTwo.getSelectedRow();
@@ -614,6 +693,50 @@ lblTotal.setText("Total: R0.00");
     }
     }//GEN-LAST:event_btnCheckoutActionPerformed
 
+    private void btnAddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseEntered
+        btnAdd.setOpaque(true);
+        btnAdd.setContentAreaFilled(true);
+        btnAdd.setBackground(new java.awt.Color(0, 102, 102));
+    }//GEN-LAST:event_btnAddMouseEntered
+
+    private void btnAddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseExited
+        btnAdd.setOpaque(false);
+        btnAdd.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnAddMouseExited
+
+    private void btnRemoveItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveItemMouseEntered
+        btnRemoveItem.setOpaque(true);
+        btnRemoveItem.setContentAreaFilled(true);
+        btnRemoveItem.setBackground(new java.awt.Color(0, 102, 102));
+    }//GEN-LAST:event_btnRemoveItemMouseEntered
+
+    private void btnRemoveItemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveItemMouseExited
+        btnRemoveItem.setOpaque(false);
+        btnRemoveItem.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnRemoveItemMouseExited
+
+    private void btnClearCartMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearCartMouseEntered
+        btnClearCart.setOpaque(true);
+        btnClearCart.setContentAreaFilled(true);
+        btnClearCart.setBackground(new java.awt.Color(0, 102, 102));
+    }//GEN-LAST:event_btnClearCartMouseEntered
+
+    private void btnClearCartMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearCartMouseExited
+        btnClearCart.setOpaque(false);
+        btnClearCart.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnClearCartMouseExited
+
+    private void btnCheckoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCheckoutMouseEntered
+        btnCheckout.setOpaque(true);
+        btnCheckout.setContentAreaFilled(true);
+        btnCheckout.setBackground(new java.awt.Color(0, 102, 102));
+    }//GEN-LAST:event_btnCheckoutMouseEntered
+
+    private void btnCheckoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCheckoutMouseExited
+        btnCheckout.setOpaque(false);
+        btnCheckout.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnCheckoutMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -637,17 +760,18 @@ lblTotal.setText("Total: R0.00");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCheckout;
     private javax.swing.JButton btnClearCart;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRemoveItem;
     private javax.swing.JComboBox<String> cmbMedicine;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMedicine;
     private javax.swing.JLabel lblQuantity;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblTotal;
-    private javax.swing.JButton tblCart;
     private javax.swing.JTable tblCartTwo;
     private javax.swing.JTextField txtQuantity;
     // End of variables declaration//GEN-END:variables

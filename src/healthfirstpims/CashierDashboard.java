@@ -23,15 +23,18 @@ public class CashierDashboard extends javax.swing.JFrame {
     
     public CashierDashboard() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(0, 102, 102));
     }
     
     public CashierDashboard(int userId, String fullName){
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(0, 102, 102));
         
         this.loggedInUserId = userId;
         this.loggedInUserName = fullName;
         
         lblWelcome.setText("Welcome, " + fullName);
+        
     }
 
     /**
@@ -47,9 +50,11 @@ public class CashierDashboard extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         lblTitle = new javax.swing.JLabel();
         lblWelcome = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         btnPOS = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         btnSalesHistory = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,53 +71,104 @@ public class CashierDashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblTitle.setBackground(new java.awt.Color(255, 255, 255));
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTitle.setText("HEALTHFIRST PHARMACY CASHIER DASHBOARD");
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setText("HEALTHFIRST PHARMACY");
 
+        lblWelcome.setForeground(new java.awt.Color(255, 255, 255));
         lblWelcome.setText("Welcome, Cashier");
 
-        btnPOS.setText("POINT OF SALE");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnPOS.setText("POS");
+        btnPOS.setBorderPainted(false);
+        btnPOS.setContentAreaFilled(false);
+        btnPOS.setFocusPainted(false);
+        btnPOS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPOSMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPOSMouseExited(evt);
+            }
+        });
         btnPOS.addActionListener(this::btnPOSActionPerformed);
 
+        btnSalesHistory.setText("History");
+        btnSalesHistory.setBorderPainted(false);
+        btnSalesHistory.setContentAreaFilled(false);
+        btnSalesHistory.setFocusPainted(false);
+        btnSalesHistory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSalesHistoryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSalesHistoryMouseExited(evt);
+            }
+        });
+        btnSalesHistory.addActionListener(this::btnSalesHistoryActionPerformed);
+
+        btnLogout.setBackground(new java.awt.Color(255, 0, 51));
+        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("LOGOUT");
         btnLogout.addActionListener(this::btnLogoutActionPerformed);
 
-        btnSalesHistory.setText("Sales History");
-        btnSalesHistory.addActionListener(this::btnSalesHistoryActionPerformed);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 102));
+        jLabel1.setText("Dashboard");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnSalesHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPOS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnPOS, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalesHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSalesHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnPOS)
-                            .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(60, Short.MAX_VALUE))
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(90, 90, 90)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblWelcome)
-                .addGap(38, 38, 38)
-                .addComponent(btnPOS)
-                .addGap(26, 26, 26)
-                .addComponent(btnSalesHistory)
-                .addGap(32, 32, 32)
-                .addComponent(btnLogout)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -146,6 +202,28 @@ public class CashierDashboard extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnLogoutActionPerformed
 
+    private void btnPOSMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPOSMouseEntered
+        btnPOS.setOpaque(true);
+        btnPOS.setContentAreaFilled(true);
+        btnPOS.setBackground(new java.awt.Color(0, 102, 102));
+    }//GEN-LAST:event_btnPOSMouseEntered
+
+    private void btnPOSMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPOSMouseExited
+        btnPOS.setOpaque(false);
+        btnPOS.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnPOSMouseExited
+
+    private void btnSalesHistoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesHistoryMouseEntered
+        btnSalesHistory.setOpaque(true);
+        btnSalesHistory.setContentAreaFilled(true);
+        btnSalesHistory.setBackground(new java.awt.Color(0, 102, 102));
+    }//GEN-LAST:event_btnSalesHistoryMouseEntered
+
+    private void btnSalesHistoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesHistoryMouseExited
+        btnSalesHistory.setOpaque(false);
+        btnSalesHistory.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnSalesHistoryMouseExited
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -172,6 +250,8 @@ public class CashierDashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnPOS;
     private javax.swing.JButton btnSalesHistory;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblTitle;

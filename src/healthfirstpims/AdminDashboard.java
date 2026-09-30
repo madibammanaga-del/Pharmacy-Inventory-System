@@ -7,7 +7,7 @@ public class AdminDashboard extends javax.swing.JFrame {
     // Creates new form AdminDashboard
     public AdminDashboard() {
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(51, 51, 51));
+        getContentPane().setBackground(new java.awt.Color(0, 102, 102));
         btnMedicines.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         btnMedicines.setBorderPainted(false);
         btnMedicines.setFocusPainted(false);

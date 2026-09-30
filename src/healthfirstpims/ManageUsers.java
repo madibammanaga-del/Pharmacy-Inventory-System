@@ -18,6 +18,8 @@ public class ManageUsers extends javax.swing.JFrame {
     public ManageUsers() {
         initComponents();
         loadUsers();
+        
+        getContentPane().setBackground(new java.awt.Color(0, 102, 102));
     }
     
     private void loadUsers() {
@@ -69,24 +71,27 @@ public class ManageUsers extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         lblManageUsers = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        jPanel1 = new RoundedPanel();
         lblUserId = new javax.swing.JLabel();
-        lblUsername = new javax.swing.JLabel();
-        lblPassword = new javax.swing.JLabel();
-        lblRole = new javax.swing.JLabel();
         txtUserId = new javax.swing.JTextField();
+        lblUsername = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
+        lblPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
+        lblRole = new javax.swing.JLabel();
         cmbRole = new javax.swing.JComboBox<>();
-        btnAdd = new javax.swing.JButton();
+        txtFullName = new javax.swing.JTextField();
+        lblFullName = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        lblUserList = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        btnRefresh = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
-        lblFullName = new javax.swing.JLabel();
-        txtFullName = new javax.swing.JTextField();
+        lblUserList = new javax.swing.JLabel();
 
         jTextField4.setText("jTextField4");
 
@@ -105,29 +110,121 @@ public class ManageUsers extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblManageUsers.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblManageUsers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageUsers.setText("MANAGE USERS");
 
+        btnBack.setBackground(new java.awt.Color(0, 102, 102));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("< Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+
+        jPanel1.setBackground(new java.awt.Color(0, 204, 153));
+
+        lblUserId.setForeground(new java.awt.Color(0, 0, 255));
         lblUserId.setText("UserID:");
 
+        txtUserId.setBackground(new java.awt.Color(204, 204, 255));
+
+        lblUsername.setForeground(new java.awt.Color(0, 0, 255));
         lblUsername.setText("Username:");
 
-        lblPassword.setText("Password");
+        txtUsername.setBackground(new java.awt.Color(204, 204, 255));
 
-        lblRole.setText("Role");
+        lblPassword.setForeground(new java.awt.Color(0, 51, 255));
+        lblPassword.setText("Password:");
 
+        txtPassword.setBackground(new java.awt.Color(204, 204, 255));
+
+        lblRole.setForeground(new java.awt.Color(0, 0, 255));
+        lblRole.setText("Role:");
+
+        cmbRole.setBackground(new java.awt.Color(204, 204, 255));
         cmbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Cashier", " " }));
         cmbRole.setToolTipText("Admin / Pharmacist");
 
-        btnAdd.setText("Add User");
-        btnAdd.addActionListener(this::btnAddActionPerformed);
+        txtFullName.setBackground(new java.awt.Color(204, 204, 255));
+
+        lblFullName.setForeground(new java.awt.Color(0, 0, 255));
+        lblFullName.setText("Full Name:");
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Details");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblRole)
+                        .addGap(49, 49, 49)
+                        .addComponent(cmbRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblFullName)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtFullName))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblPassword)
+                        .addGap(22, 22, 22)
+                        .addComponent(txtPassword))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblUsername)
+                            .addComponent(lblUserId))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtUserId)
+                            .addComponent(txtUsername))))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(191, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(171, 171, 171))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUserId)
+                    .addComponent(txtUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsername)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPassword)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRole)
+                    .addComponent(cmbRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFullName)
+                    .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
+        );
 
         btnUpdate.setText("Update User");
         btnUpdate.addActionListener(this::btnUpdateActionPerformed);
 
+        btnRefresh.setBackground(new java.awt.Color(0, 102, 102));
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(this::btnRefreshActionPerformed);
+
+        btnAdd.setText("Add User");
+        btnAdd.addActionListener(this::btnAddActionPerformed);
+
         btnDelete.setText("Delete User");
         btnDelete.addActionListener(this::btnDeleteActionPerformed);
-
-        lblUserList.setText("USER LIST");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -147,291 +244,258 @@ public class ManageUsers extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        btnRefresh.setText("Refresh");
-        btnRefresh.addActionListener(this::btnRefreshActionPerformed);
-
-        btnBack.setText("Back");
-        btnBack.addActionListener(this::btnBackActionPerformed);
-
-        lblFullName.setText("Full Name:");
+        lblUserList.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        lblUserList.setForeground(new java.awt.Color(255, 255, 255));
+        lblUserList.setText("USER LIST");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
+                        .addComponent(btnBack)
+                        .addGap(106, 106, 106)
                         .addComponent(lblManageUsers))
-                    .addGroup(layout.createSequentialGroup()
+                    .addComponent(jSeparator1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblUsername)
-                                    .addComponent(lblUserId)
-                                    .addComponent(lblPassword)
-                                    .addComponent(lblRole)
-                                    .addComponent(lblFullName)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnAdd)))
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblUserList)
-                                    .addComponent(btnUpdate))
                                 .addGap(18, 18, 18)
-                                .addComponent(btnDelete))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtFullName, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtUserId, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtUsername, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cmbRole, javax.swing.GroupLayout.Alignment.LEADING, 0, 187, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(btnRefresh)
-                        .addGap(98, 98, 98)
-                        .addComponent(btnBack))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnUpdate)
+                                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(btnRefresh))))
+                    .addComponent(jScrollPane2))
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblUserList)
+                .addGap(231, 231, 231))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblManageUsers)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUserId)
-                    .addComponent(txtUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPassword)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRole)
-                    .addComponent(cmbRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFullName)
-                    .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete)
-                    .addComponent(btnAdd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblUserList)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRefresh)
+                    .addComponent(lblManageUsers)
                     .addComponent(btnBack))
-                .addGap(19, 19, 19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRefresh)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(lblUserList)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        String username = txtUsername.getText().trim();
-String password = txtPassword.getText().trim();
-String role = cmbRole.getSelectedItem().toString();
-String fullName = txtFullName.getText().trim();
-
-if (username.isEmpty() || password.isEmpty() || fullName.isEmpty()) {
-    JOptionPane.showMessageDialog(
-            this,
-            "Please fill in all fields.",
-            "Missing Information",
-            JOptionPane.WARNING_MESSAGE
-    );
-    return;
-}
-
-String sql = "INSERT INTO users (username, password, role, full_name) "
-           + "VALUES (?, ?, ?, ?)";
-
-try (Connection conn = DatabaseConnection.getConnection();
-     PreparedStatement pst = conn.prepareStatement(sql)) {
-
-    pst.setString(1, username);
-    pst.setString(2, password);
-    pst.setString(3, role);
-    pst.setString(4, fullName);
-
-    pst.executeUpdate();
-
-    JOptionPane.showMessageDialog(
-            this,
-            "User added successfully."
-    );
-
-    loadUsers();
-
-    txtUsername.setText("");
-    txtPassword.setText("");
-    txtFullName.setText("");
-    txtUserId.setText("");
-
-} catch (SQLException e) {
-
-    JOptionPane.showMessageDialog(
-            this,
-            "Error adding user: " + e.getMessage(),
-            "Database Error",
-            JOptionPane.ERROR_MESSAGE
-    );
-}
-    }//GEN-LAST:event_btnAddActionPerformed
-
-    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
-         int selectedRow = jTable2.getSelectedRow();
-
-    if (selectedRow >= 0) {
-        txtUserId.setText(jTable2.getValueAt(selectedRow, 0).toString());
-        txtUsername.setText(jTable2.getValueAt(selectedRow, 1).toString());
-        txtPassword.setText(jTable2.getValueAt(selectedRow, 2).toString());
-        cmbRole.setSelectedItem(jTable2.getValueAt(selectedRow, 3).toString());
-        txtFullName.setText(jTable2.getValueAt(selectedRow, 4).toString());
-    }
-    }//GEN-LAST:event_jTable2MouseClicked
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        String userId = txtUserId.getText().trim();
-String username = txtUsername.getText().trim();
-String password = txtPassword.getText().trim();
-String role = cmbRole.getSelectedItem().toString();
-String fullName = txtFullName.getText().trim();
-
-if (userId.isEmpty() || username.isEmpty() || password.isEmpty() || fullName.isEmpty()) {
-    JOptionPane.showMessageDialog(
-            this,
-            "Please select a user and fill in all fields.",
-            "Missing Information",
-            JOptionPane.WARNING_MESSAGE
-    );
-    return;
-}
-
-String sql = "UPDATE users SET username = ?, password = ?, role = ?, full_name = ? "
-           + "WHERE user_id = ?";
-
-try (Connection conn = DatabaseConnection.getConnection();
-     PreparedStatement pst = conn.prepareStatement(sql)) {
-
-    pst.setString(1, username);
-    pst.setString(2, password);
-    pst.setString(3, role);
-    pst.setString(4, fullName);
-    pst.setInt(5, Integer.parseInt(userId));
-
-    int rowsUpdated = pst.executeUpdate();
-
-    if (rowsUpdated > 0) {
-        JOptionPane.showMessageDialog(
-                this,
-                "User updated successfully."
-        );
-
-        loadUsers();
-
-        txtUserId.setText("");
-        txtUsername.setText("");
-        txtPassword.setText("");
-        txtFullName.setText("");
-    }
-
-} catch (SQLException e) {
-    JOptionPane.showMessageDialog(
-            this,
-            "Error updating user: " + e.getMessage(),
-            "Database Error",
-            JOptionPane.ERROR_MESSAGE
-    );
-}
-    }//GEN-LAST:event_btnUpdateActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        String userId = txtUserId.getText().trim();
-
-if (userId.isEmpty()) {
-    JOptionPane.showMessageDialog(
-            this,
-            "Please select a user to delete.",
-            "No User Selected",
-            JOptionPane.WARNING_MESSAGE
-    );
-    return;
-}
-
-int confirm = JOptionPane.showConfirmDialog(
-        this,
-        "Are you sure you want to delete this user?",
-        "Confirm Delete",
-        JOptionPane.YES_NO_OPTION
-);
-
-if (confirm != JOptionPane.YES_OPTION) {
-    return;
-}
-
-String sql = "DELETE FROM users WHERE user_id = ?";
-
-try (Connection conn = DatabaseConnection.getConnection();
-     PreparedStatement pst = conn.prepareStatement(sql)) {
-
-    pst.setInt(1, Integer.parseInt(userId));
-
-    int rowsDeleted = pst.executeUpdate();
-
-    if (rowsDeleted > 0) {
-        JOptionPane.showMessageDialog(
-                this,
-                "User deleted successfully."
-        );
-
-        loadUsers();
-
-        txtUserId.setText("");
-        txtUsername.setText("");
-        txtPassword.setText("");
-        txtFullName.setText("");
-    }
-
-} catch (SQLException e) {
-    JOptionPane.showMessageDialog(
-            this,
-            "Error deleting user: " + e.getMessage(),
-            "Database Error",
-            JOptionPane.ERROR_MESSAGE
-    );
-}
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-        loadUsers();
-        
-        JOptionPane.showMessageDialog(this, "User list refreshed successfully.");
-    }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         AdminDashboard dashboard = new AdminDashboard();
         dashboard.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        String userId = txtUserId.getText().trim();
+
+        if (userId.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Please select a user to delete.",
+                "No User Selected",
+                JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(
+            this,
+            "Are you sure you want to delete this user?",
+            "Confirm Delete",
+            JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        String sql = "DELETE FROM users WHERE user_id = ?";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement pst = conn.prepareStatement(sql)) {
+
+            pst.setInt(1, Integer.parseInt(userId));
+
+            int rowsDeleted = pst.executeUpdate();
+
+            if (rowsDeleted > 0) {
+                JOptionPane.showMessageDialog(
+                    this,
+                    "User deleted successfully."
+                );
+
+                loadUsers();
+
+                txtUserId.setText("");
+                txtUsername.setText("");
+                txtPassword.setText("");
+                txtFullName.setText("");
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Error deleting user: " + e.getMessage(),
+                "Database Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        String username = txtUsername.getText().trim();
+        String password = txtPassword.getText().trim();
+        String role = cmbRole.getSelectedItem().toString();
+        String fullName = txtFullName.getText().trim();
+
+        if (username.isEmpty() || password.isEmpty() || fullName.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Please fill in all fields.",
+                "Missing Information",
+                JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+
+        String sql = "INSERT INTO users (username, password, role, full_name) "
+        + "VALUES (?, ?, ?, ?)";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement pst = conn.prepareStatement(sql)) {
+
+            pst.setString(1, username);
+            pst.setString(2, password);
+            pst.setString(3, role);
+            pst.setString(4, fullName);
+
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(
+                this,
+                "User added successfully."
+            );
+
+            loadUsers();
+
+            txtUsername.setText("");
+            txtPassword.setText("");
+            txtFullName.setText("");
+            txtUserId.setText("");
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(
+                this,
+                "Error adding user: " + e.getMessage(),
+                "Database Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        String userId = txtUserId.getText().trim();
+        String username = txtUsername.getText().trim();
+        String password = txtPassword.getText().trim();
+        String role = cmbRole.getSelectedItem().toString();
+        String fullName = txtFullName.getText().trim();
+
+        if (userId.isEmpty() || username.isEmpty() || password.isEmpty() || fullName.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Please select a user and fill in all fields.",
+                "Missing Information",
+                JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+
+        String sql = "UPDATE users SET username = ?, password = ?, role = ?, full_name = ? "
+        + "WHERE user_id = ?";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement pst = conn.prepareStatement(sql)) {
+
+            pst.setString(1, username);
+            pst.setString(2, password);
+            pst.setString(3, role);
+            pst.setString(4, fullName);
+            pst.setInt(5, Integer.parseInt(userId));
+
+            int rowsUpdated = pst.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                JOptionPane.showMessageDialog(
+                    this,
+                    "User updated successfully."
+                );
+
+                loadUsers();
+
+                txtUserId.setText("");
+                txtUsername.setText("");
+                txtPassword.setText("");
+                txtFullName.setText("");
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Error updating user: " + e.getMessage(),
+                "Database Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        loadUsers();
+
+        JOptionPane.showMessageDialog(this, "User list refreshed successfully.");
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        int selectedRow = jTable2.getSelectedRow();
+
+        if (selectedRow >= 0) {
+            txtUserId.setText(jTable2.getValueAt(selectedRow, 0).toString());
+            txtUsername.setText(jTable2.getValueAt(selectedRow, 1).toString());
+            txtPassword.setText(jTable2.getValueAt(selectedRow, 2).toString());
+            cmbRole.setSelectedItem(jTable2.getValueAt(selectedRow, 3).toString());
+            txtFullName.setText(jTable2.getValueAt(selectedRow, 4).toString());
+        }
+    }//GEN-LAST:event_jTable2MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -462,8 +526,11 @@ try (Connection conn = DatabaseConnection.getConnection();
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cmbRole;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField4;
