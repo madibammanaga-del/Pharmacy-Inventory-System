@@ -52,7 +52,19 @@ public class LowStockReport extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        btnBack.setText("< Back");
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("< ");
+        btnBack.setBorderPainted(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setFocusPainted(false);
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackMouseExited(evt);
+            }
+        });
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -96,6 +108,17 @@ public class LowStockReport extends javax.swing.JFrame {
         dashboard.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
+        btnBack.setOpaque(false);
+        btnBack.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnBackMouseExited
+
+    private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
+        btnBack.setOpaque(true);
+        btnBack.setContentAreaFilled(true);
+        btnBack.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnBackMouseEntered
      
     private void loadLowStock() {
 

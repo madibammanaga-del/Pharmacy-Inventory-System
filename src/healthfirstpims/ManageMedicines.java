@@ -202,7 +202,7 @@ public class ManageMedicines extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new RoundedPanel();
         btnBack = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -309,6 +309,14 @@ public class ManageMedicines extends javax.swing.JFrame {
         btnBack.setBackground(new java.awt.Color(0, 153, 153));
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("< ");
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackMouseExited(evt);
+            }
+        });
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -701,6 +709,17 @@ public class ManageMedicines extends javax.swing.JFrame {
     private void txtSupplierIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSupplierIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSupplierIdActionPerformed
+
+    private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
+        btnBack.setOpaque(true);
+        btnBack.setContentAreaFilled(true);
+        btnBack.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnBackMouseEntered
+
+    private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
+        btnBack.setOpaque(false);
+        btnBack.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnBackMouseExited
 
 
      /**

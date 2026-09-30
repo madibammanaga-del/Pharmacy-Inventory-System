@@ -230,13 +230,49 @@ public class SalesReports extends javax.swing.JFrame {
         lblToDate.setForeground(new java.awt.Color(255, 255, 255));
         lblToDate.setText("To Date:");
 
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("SEARCH");
+        btnSearch.setBorderPainted(false);
+        btnSearch.setContentAreaFilled(false);
+        btnSearch.setFocusPainted(false);
+        btnSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSearchMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSearchMouseExited(evt);
+            }
+        });
         btnSearch.addActionListener(this::btnSearchActionPerformed);
 
+        btnPrint.setForeground(new java.awt.Color(255, 255, 255));
         btnPrint.setText("PRINT");
+        btnPrint.setBorderPainted(false);
+        btnPrint.setContentAreaFilled(false);
+        btnPrint.setFocusPainted(false);
+        btnPrint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPrintMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPrintMouseExited(evt);
+            }
+        });
         btnPrint.addActionListener(this::btnPrintActionPerformed);
 
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("<");
+        btnBack.setBorderPainted(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setFocusPainted(false);
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackMouseExited(evt);
+            }
+        });
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         tblSales.setModel(new javax.swing.table.DefaultTableModel(
@@ -252,21 +288,48 @@ public class SalesReports extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblSales);
 
+        btnClearShowAll.setForeground(new java.awt.Color(255, 255, 255));
         btnClearShowAll.setText("Clear/Show All");
+        btnClearShowAll.setBorderPainted(false);
+        btnClearShowAll.setContentAreaFilled(false);
+        btnClearShowAll.setFocusPainted(false);
+        btnClearShowAll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClearShowAllMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClearShowAllMouseExited(evt);
+            }
+        });
         btnClearShowAll.addActionListener(this::btnClearShowAllActionPerformed);
 
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnRefresh.setText("Refresh");
+        btnRefresh.setBorderPainted(false);
+        btnRefresh.setContentAreaFilled(false);
+        btnRefresh.setFocusPainted(false);
+        btnRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRefreshMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRefreshMouseExited(evt);
+            }
+        });
         btnRefresh.addActionListener(this::btnRefreshActionPerformed);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
         lblTotalSales.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblTotalSales.setForeground(new java.awt.Color(255, 255, 255));
         lblTotalSales.setText("Total Sales: R0.00");
 
         lblTotalItems.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblTotalItems.setForeground(new java.awt.Color(255, 255, 255));
         lblTotalItems.setText("Total Items Sold: 0");
 
         lblTotalInvoices.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblTotalInvoices.setForeground(new java.awt.Color(255, 255, 255));
         lblTotalInvoices.setText("Number of Invoices: 0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -494,6 +557,61 @@ public class SalesReports extends javax.swing.JFrame {
         txtFromDate.setText("");
         txtToDate.setText("");
     }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
+        btnBack.setOpaque(true);
+        btnBack.setContentAreaFilled(true);
+        btnBack.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnBackMouseEntered
+
+    private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
+        btnBack.setOpaque(false);
+        btnBack.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnBackMouseExited
+
+    private void btnSearchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseEntered
+        btnSearch.setOpaque(true);
+        btnSearch.setContentAreaFilled(true);
+        btnSearch.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnSearchMouseEntered
+
+    private void btnSearchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseExited
+        btnSearch.setOpaque(false);
+        btnSearch.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnSearchMouseExited
+
+    private void btnClearShowAllMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearShowAllMouseEntered
+        btnClearShowAll.setOpaque(true);
+        btnClearShowAll.setContentAreaFilled(true);
+        btnClearShowAll.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnClearShowAllMouseEntered
+
+    private void btnClearShowAllMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearShowAllMouseExited
+        btnClearShowAll.setOpaque(false);
+        btnClearShowAll.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnClearShowAllMouseExited
+
+    private void btnRefreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseEntered
+        btnRefresh.setOpaque(true);
+        btnRefresh.setContentAreaFilled(true);
+        btnRefresh.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnRefreshMouseEntered
+
+    private void btnRefreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseExited
+        btnRefresh.setOpaque(false);
+        btnRefresh.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnRefreshMouseExited
+
+    private void btnPrintMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrintMouseEntered
+        btnPrint.setOpaque(true);
+        btnPrint.setContentAreaFilled(true);
+        btnPrint.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnPrintMouseEntered
+
+    private void btnPrintMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrintMouseExited
+        btnPrint.setOpaque(false);
+        btnPrint.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnPrintMouseExited
 
     /**
      * @param args the command line arguments

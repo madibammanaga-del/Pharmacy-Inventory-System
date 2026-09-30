@@ -136,22 +136,77 @@ public class ManageSuppliers extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         btnAddSupplier.setText("Add");
+        btnAddSupplier.setBorderPainted(false);
+        btnAddSupplier.setContentAreaFilled(false);
+        btnAddSupplier.setFocusPainted(false);
+        btnAddSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddSupplierMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddSupplierMouseExited(evt);
+            }
+        });
         btnAddSupplier.addActionListener(this::btnAddSupplierActionPerformed);
 
         btnUpdateSupplier.setText("Update ");
+        btnUpdateSupplier.setBorderPainted(false);
+        btnUpdateSupplier.setContentAreaFilled(false);
+        btnUpdateSupplier.setFocusPainted(false);
+        btnUpdateSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnUpdateSupplierMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUpdateSupplierMouseExited(evt);
+            }
+        });
         btnUpdateSupplier.addActionListener(this::btnUpdateSupplierActionPerformed);
 
         btnDeleteSupplier.setText("Delete ");
+        btnDeleteSupplier.setBorderPainted(false);
+        btnDeleteSupplier.setContentAreaFilled(false);
+        btnDeleteSupplier.setFocusPainted(false);
+        btnDeleteSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDeleteSupplierMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDeleteSupplierMouseExited(evt);
+            }
+        });
         btnDeleteSupplier.addActionListener(this::btnDeleteSupplierActionPerformed);
 
         btnRefresh.setText("Refresh");
+        btnRefresh.setBorderPainted(false);
+        btnRefresh.setContentAreaFilled(false);
+        btnRefresh.setFocusPainted(false);
+        btnRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRefreshMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRefreshMouseExited(evt);
+            }
+        });
         btnRefresh.addActionListener(this::btnRefreshActionPerformed);
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setText("MANAGE SUPPLIERS");
 
-        btnBack.setText("< Back");
+        btnBack.setText("< ");
+        btnBack.setBorderPainted(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setFocusPainted(false);
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackMouseExited(evt);
+            }
+        });
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -221,8 +276,7 @@ public class ManageSuppliers extends javax.swing.JFrame {
                             .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
                             .addComponent(txtPhone, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtContactPerson)
-                            .addComponent(txtAddress))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtAddress)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblSupplierId)
@@ -230,8 +284,8 @@ public class ManageSuppliers extends javax.swing.JFrame {
                         .addGap(72, 72, 72)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtSupplierName, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                            .addComponent(txtSupplierId))
-                        .addContainerGap(234, Short.MAX_VALUE))))
+                            .addComponent(txtSupplierId))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -502,6 +556,61 @@ try (Connection conn = DatabaseConnection.getConnection();
         dashboard.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
+        btnBack.setOpaque(true);
+        btnBack.setContentAreaFilled(true);
+        btnBack.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnBackMouseEntered
+
+    private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
+        btnBack.setOpaque(false);
+        btnBack.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnBackMouseExited
+
+    private void btnAddSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSupplierMouseEntered
+        btnAddSupplier.setOpaque(true);
+        btnAddSupplier.setContentAreaFilled(true);
+        btnAddSupplier.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnAddSupplierMouseEntered
+
+    private void btnAddSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSupplierMouseExited
+        btnAddSupplier.setOpaque(false);
+        btnAddSupplier.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnAddSupplierMouseExited
+
+    private void btnUpdateSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateSupplierMouseEntered
+        btnUpdateSupplier.setOpaque(true);
+        btnUpdateSupplier.setContentAreaFilled(true);
+        btnUpdateSupplier.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnUpdateSupplierMouseEntered
+
+    private void btnUpdateSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateSupplierMouseExited
+        btnUpdateSupplier.setOpaque(false);
+        btnUpdateSupplier.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnUpdateSupplierMouseExited
+
+    private void btnDeleteSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteSupplierMouseEntered
+        btnDeleteSupplier.setOpaque(true);
+        btnDeleteSupplier.setContentAreaFilled(true);
+        btnDeleteSupplier.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnDeleteSupplierMouseEntered
+
+    private void btnDeleteSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteSupplierMouseExited
+        btnDeleteSupplier.setOpaque(false);
+        btnDeleteSupplier.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnDeleteSupplierMouseExited
+
+    private void btnRefreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseEntered
+        btnRefresh.setOpaque(true);
+        btnRefresh.setContentAreaFilled(true);
+        btnRefresh.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnRefreshMouseEntered
+
+    private void btnRefreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseExited
+        btnRefresh.setOpaque(false);
+        btnRefresh.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnRefreshMouseExited
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

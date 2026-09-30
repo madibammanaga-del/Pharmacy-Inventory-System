@@ -98,10 +98,34 @@ public class SalesHistory extends javax.swing.JFrame {
         lblSearch.setForeground(new java.awt.Color(255, 255, 255));
         lblSearch.setText("Search:");
 
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
+        btnSearch.setBorderPainted(false);
+        btnSearch.setContentAreaFilled(false);
+        btnSearch.setFocusPainted(false);
+        btnSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSearchMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSearchMouseExited(evt);
+            }
+        });
         btnSearch.addActionListener(this::btnSearchActionPerformed);
 
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnRefresh.setText("Refresh");
+        btnRefresh.setBorderPainted(false);
+        btnRefresh.setContentAreaFilled(false);
+        btnRefresh.setFocusPainted(false);
+        btnRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRefreshMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRefreshMouseExited(evt);
+            }
+        });
         btnRefresh.addActionListener(this::btnRefreshActionPerformed);
 
         tblSales.setModel(new javax.swing.table.DefaultTableModel(
@@ -117,9 +141,33 @@ public class SalesHistory extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblSales);
 
+        btnViewDetails.setForeground(new java.awt.Color(255, 255, 255));
         btnViewDetails.setText("View Sale Details");
+        btnViewDetails.setBorderPainted(false);
+        btnViewDetails.setContentAreaFilled(false);
+        btnViewDetails.setFocusPainted(false);
+        btnViewDetails.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnViewDetailsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnViewDetailsMouseExited(evt);
+            }
+        });
 
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("<");
+        btnBack.setBorderPainted(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setFocusPainted(false);
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackMouseExited(evt);
+            }
+        });
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,6 +245,50 @@ public class SalesHistory extends javax.swing.JFrame {
         dashboard.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
+        btnBack.setOpaque(true);
+        btnBack.setContentAreaFilled(true);
+        btnBack.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnBackMouseEntered
+
+    private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
+        btnBack.setOpaque(false);
+        btnBack.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnBackMouseExited
+
+    private void btnSearchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseEntered
+        btnSearch.setOpaque(true);
+        btnSearch.setContentAreaFilled(true);
+        btnSearch.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnSearchMouseEntered
+
+    private void btnSearchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseExited
+        btnSearch.setOpaque(false);
+        btnSearch.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnSearchMouseExited
+
+    private void btnRefreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseEntered
+        btnRefresh.setOpaque(true);
+        btnRefresh.setContentAreaFilled(true);
+        btnRefresh.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnRefreshMouseEntered
+
+    private void btnRefreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseExited
+        btnRefresh.setOpaque(false);
+        btnRefresh.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnRefreshMouseExited
+
+    private void btnViewDetailsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViewDetailsMouseEntered
+        btnViewDetails.setOpaque(true);
+        btnViewDetails.setContentAreaFilled(true);
+        btnViewDetails.setBackground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_btnViewDetailsMouseEntered
+
+    private void btnViewDetailsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViewDetailsMouseExited
+        btnRefresh.setOpaque(false);
+        btnRefresh.setContentAreaFilled(false);
+    }//GEN-LAST:event_btnViewDetailsMouseExited
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
